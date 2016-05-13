@@ -1,8 +1,8 @@
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 15.12.2
-Release: 2%{?dist}
+Version: 16.04.1
+Release: 1%{?dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -37,6 +37,8 @@ BuildRequires: kf5-knotifyconfig-devel
 BuildRequires: kf5-kplotting-devel
 BuildRequires: kf5-ktextwidgets-devel
 BuildRequires: kf5-kxmlgui-devel
+BuildRequires: kf5-kinit-devel
+BuildRequires: kf5-kcrash-devel
 BuildRequires: libappstream-glib
 
 BuildRequires: pkgconfig(libv4l2)
@@ -140,6 +142,9 @@ update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
 
 
 %changelog
+* Fri May 13 2016 Sérgio Basto <sergio@serjux.com> - 16.04.1-1
+- Update to 16.04.1
+
 * Thu Mar 24 2016 Sérgio Basto <sergio@serjux.com> - 15.12.2-2
 - Fix rfbz #4015
 
