@@ -2,7 +2,7 @@
 Name:    kdenlive
 Summary: Non-linear video editor
 Version: 16.04.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -60,6 +60,7 @@ Requires: dvgrab
 Requires: ffmpeg
 Requires: mlt%{?_isa} >= %{mlt_version}
 Requires: recordmydesktop
+Requires: qt5-qtquickcontrols
 
 %description
 Kdenlive is an intuitive and powerful multi-track video editor, including most
@@ -73,7 +74,7 @@ recent video technologies.
 %build
 mkdir %{_target_platform}
 pushd %{_target_platform}
-%{cmake_kf5} ..
+%{cmake_kf5} -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON  ..
 popd
 
 make %{?_smp_mflags} -C %{_target_platform}
@@ -142,6 +143,12 @@ update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
 
 
 %changelog
+
+* Fri May 27 2016 David Vásquez <davidjeremias82 AT gmail DOT com> 16.04.1-2
+- Added missing dependencies
+- Disabled, build testing
+- Automatic qt system path
+
 * Fri May 13 2016 Sérgio Basto <sergio@serjux.com> - 16.04.1-1
 - Update to 16.04.1
 
