@@ -39,6 +39,7 @@ BuildRequires: kf5-ktextwidgets-devel
 BuildRequires: kf5-kxmlgui-devel
 BuildRequires: kf5-kinit-devel
 BuildRequires: kf5-kcrash-devel
+BuildRequires: kf5-kfilemetadata-devel
 BuildRequires: libappstream-glib
 
 BuildRequires: pkgconfig(libv4l2)
@@ -53,6 +54,7 @@ BuildRequires: pkgconfig(Qt5Svg)
 BuildRequires: pkgconfig(Qt5Qml)
 BuildRequires: pkgconfig(Qt5Quick)
 BuildRequires: pkgconfig(Qt5Widgets)
+BuildRequires: pkgconfig(Qt5WebKitWidgets)
 
 %{?kf5_kinit_requires}
 Requires: dvdauthor
