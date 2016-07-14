@@ -1,8 +1,8 @@
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 16.04.1
-Release: 3%{?dist}
+Version: 16.04.3
+Release: 1%{?dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -145,9 +145,12 @@ update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
 
 
 %changelog
+
+* Tue Jul 12 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.04.3-1
+- Updated to 16.04.3
+
 * Sun Jun 26 2016 The UnitedRPMs Project (Key for UnitedRPMs infrastructure) <unitedrpms@protonmail.com> - 16.04.1-3
 - Rebuild with new ffmpeg
-
 
 * Fri May 27 2016 David Vásquez <davidjeremias82 AT gmail DOT com> 16.04.1-2
 - Added missing dependencies
