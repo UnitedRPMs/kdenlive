@@ -1,7 +1,6 @@
-
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 16.04.3
+Version: 16.08.0
 Release: 1%{?dist}
 
 License: GPLv2+
@@ -145,6 +144,9 @@ update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
 
 
 %changelog
+
+* Tue Aug 23 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.08.0-1
+- Updated to 16.08.0
 
 * Tue Jul 12 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.04.3-1
 - Updated to 16.04.3

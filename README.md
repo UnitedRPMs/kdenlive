@@ -1,7 +1,8 @@
-# kdenlive
-
+#    kdenlive
+ 
 Summary: Non-linear video editor
-
-Version: 16.04.3
-
+ 
+Version: 16.08.0
+ 
 License: GPLv2+
+ 
