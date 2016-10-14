@@ -1,6 +1,6 @@
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 16.08.0
+Version: 16.08.2
 Release: 1%{?dist}
 
 License: GPLv2+
@@ -89,10 +89,6 @@ make install/fast DESTDIR=%{buildroot} -C %{_target_platform}
 rm -rfv %{buildroot}%{_datadir}/menu/
 rm -rfv %{buildroot}%{_datadir}/pixmaps/
 
-# fix/rename appdata
-mv %{buildroot}%{_datadir}/appdata/%{name}.appdata.xml \
-   %{buildroot}%{_datadir}/appdata/org.kde.%{name}.appdata.xml
-
 
 %check
 appstream-util validate-relax --nonet %{buildroot}%{_datadir}/appdata/org.kde.%{name}.appdata.xml ||:
@@ -144,6 +140,9 @@ update-mime-database %{?fedora:-n} %{_datadir}/mime &> /dev/null || :
 
 
 %changelog
+
+* Thu Oct 13 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.08.2-1
+- Updated to 16.08.2
 
 * Tue Aug 23 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.08.0-1
 - Updated to 16.08.0
