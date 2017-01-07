@@ -1,8 +1,8 @@
 #    kdenlive
+
+[![Build Status](https://travis-ci.org/UnitedRPMs/kdenlive.svg?branch=master)](https://travis-ci.org/UnitedRPMs/kdenlive)
  
 Summary: Non-linear video editor
- 
-Version: 16.08.0
- 
+  
 License: GPLv2+
  
