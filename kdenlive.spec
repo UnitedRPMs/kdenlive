@@ -1,7 +1,12 @@
+%global gitdate 20170225
+%global commit0 640d4467558db92b5d2dbcc0baaf74a4a5f664c2
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global gver .%{gitdate}git%{shortcommit0}
+
 Name:    kdenlive
 Summary: Non-linear video editor
 Version: 16.12.2
-Release: 1%{?dist}
+Release: 1%{?gver}%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -11,7 +16,8 @@ URL:     http://www.kdenlive.org
 %else
 %global stable stable
 %endif
-Source0: http://download.kde.org/%{stable}/applications/%{version}/src/kdenlive-%{version}.tar.xz
+Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Patch: gcc7.patch
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
@@ -74,7 +80,7 @@ recent video technologies.
 
 
 %prep
-%setup -q
+%autosetup -n kdenlive-%{commit0} -p0
 
 
 %build
@@ -88,6 +94,7 @@ make %{?_smp_mflags} -C %{_target_platform}
 
 %install
 make install/fast DESTDIR=%{buildroot} -C %{_target_platform}
+
 
 %check
 appstream-util validate-relax --nonet %{buildroot}%{_kf5_datadir}/appdata/org.kde.%{name}.appdata.xml ||:
@@ -139,8 +146,8 @@ fi
 
 %changelog
 
-* Sat Feb 25 2017 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.2-1
-- Updated to 16.12.2-1
+* Sat Feb 25 2017 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.2-1.20170225git640d446
+- Updated to 16.12.2-1.20170225git640d446
 
 * Sat Jan 07 2017 Pavlo Rudyi <paulcarroty at riseup.net> 16.21-1
 - Updated to 16.12
