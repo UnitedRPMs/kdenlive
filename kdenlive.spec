@@ -1,6 +1,6 @@
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 16.12.0
+Version: 16.12.2
 Release: 1%{?dist}
 
 License: GPLv2+
@@ -138,6 +138,10 @@ fi
 
 
 %changelog
+
+* Sat Feb 25 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.2-1
+- Updated to 16.12.2-1
+
 * Sat Jan 07 2017 Pavlo Rudyi <paulcarroty at riseup.net> 16.21-1
 - Updated to 16.12
 
