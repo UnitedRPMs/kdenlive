@@ -139,7 +139,7 @@ fi
 
 %changelog
 
-* Sat Feb 25 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.2-1
+* Sat Feb 25 2017 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.2-1
 - Updated to 16.12.2-1
 
 * Sat Jan 07 2017 Pavlo Rudyi <paulcarroty at riseup.net> 16.21-1
