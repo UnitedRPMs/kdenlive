@@ -1,11 +1,11 @@
-%global gitdate 20170225
-%global commit0 640d4467558db92b5d2dbcc0baaf74a4a5f664c2
+%global gitdate 20170326
+%global commit0 c17302f7eacbf08bb6a2c77c5a5e90d657d1b926
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .%{gitdate}git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 16.12.2
+Version: 16.12.3
 Release: 1%{?gver}%{dist}
 
 License: GPLv2+
@@ -146,6 +146,9 @@ fi
 
 
 %changelog
+
+* Sun Mar 26 2017 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.3-1.20170326gitc17302f
+- Updated to 16.12.3-1.20170326gitc17302f
 
 * Sat Feb 25 2017 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.2-1.20170225git640d446
 - Updated to 16.12.2-1.20170225git640d446
