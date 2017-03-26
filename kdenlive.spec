@@ -17,7 +17,7 @@ URL:     http://www.kdenlive.org
 %global stable stable
 %endif
 Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch: gcc7.patch
+#Patch: gcc7.patch
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
@@ -80,7 +80,7 @@ recent video technologies.
 
 
 %prep
-%autosetup -n kdenlive-%{commit0} -p0
+%autosetup -n kdenlive-%{commit0} 
 
 
 %build
