@@ -142,8 +142,6 @@ fi
 %{_kf5_qtplugindir}/mltpreview.so
 %{_kf5_mandir}/man1/kdenlive.1*
 %{_kf5_mandir}/man1/kdenlive_render.1*
-%{_sysconfdir}/xdg/kdenlive.categories
-
 
 %changelog
 
