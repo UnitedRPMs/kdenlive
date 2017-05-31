@@ -1,12 +1,12 @@
-%global gitdate 20170326
-%global commit0 c17302f7eacbf08bb6a2c77c5a5e90d657d1b926
+%global gitdate 20170531
+%global commit0 b9652701524dc594ed24699136fe97e9032691e9
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global gver .%{gitdate}git%{shortcommit0}
+%global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 16.12.3
-Release: 1%{?gver}%{dist}
+Version: 17.04.1
+Release: 2%{?gver}%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -145,28 +145,31 @@ fi
 
 %changelog
 
-* Sun Mar 26 2017 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.3-1.20170326gitc17302f
+* Wed May 31 2017 David Vásquez <davidva AT tutanota DOT com> - 17.04.1-2.gitb965270
+- Updated to 17.04.1-2.gitb965270
+
+* Sun Mar 26 2017 David Vásquez <davidva AT tutanota DOT com> - 16.12.3-1.20170326gitc17302f
 - Updated to 16.12.3-1.20170326gitc17302f
 
-* Sat Feb 25 2017 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.12.2-1.20170225git640d446
+* Sat Feb 25 2017 David Vásquez <davidva AT tutanota DOT com> - 16.12.2-1.20170225git640d446
 - Updated to 16.12.2-1.20170225git640d446
 
 * Sat Jan 07 2017 Pavlo Rudyi <paulcarroty at riseup.net> 16.21-1
 - Updated to 16.12
 
-* Thu Oct 13 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.08.2-1
+* Thu Oct 13 2016 David Vásquez <davidva AT tutanota DOT com> - 16.08.2-1
 - Updated to 16.08.2
 
-* Tue Aug 23 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.08.0-1
+* Tue Aug 23 2016 David Vásquez <davidva AT tutanota DOT com> - 16.08.0-1
 - Updated to 16.08.0
 
-* Tue Jul 12 2016 David Vásquez <davidjeremias82 AT gmail DOT com> - 16.04.3-1
+* Tue Jul 12 2016 David Vásquez <davidva AT tutanota DOT com> - 16.04.3-1
 - Updated to 16.04.3
 
 * Sun Jun 26 2016 The UnitedRPMs Project (Key for UnitedRPMs infrastructure) <unitedrpms@protonmail.com> - 16.04.1-3
 - Rebuild with new ffmpeg
 
-* Fri May 27 2016 David Vásquez <davidjeremias82 AT gmail DOT com> 16.04.1-2
+* Fri May 27 2016 David Vásquez <davidva AT tutanota DOT com> 16.04.1-2
 - Added missing dependencies
 - Disabled, build testing
 - Automatic qt system path
