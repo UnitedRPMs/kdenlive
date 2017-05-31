@@ -1,29 +1,30 @@
---- src/scopes/audioscopes/spectrogram.cpp	2017-03-06 16:57:19.000000000 -0600
-+++ spectrogram-new.cpp	2017-03-26 10:40:44.469831958 -0600
-@@ -203,7 +203,7 @@
+--- src/scopes/audioscopes/spectrogram.cpp	2017-05-08 11:52:35.000000000 -0600
++++ spectrogram-new.cpp	2017-05-31 13:33:20.969780132 -0600
+@@ -199,7 +199,7 @@
          if (m_aGrid->isChecked()) {
              for (int frameNumber = 0; frameNumber < m_innerScopeRect.height(); frameNumber += minDistY) {
-                 y = topDist + m_innerScopeRect.height()-1 - frameNumber;
+                 y = topDist + m_innerScopeRect.height() - 1 - frameNumber;
 -                hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs(y - mouseY) < (int)textDistY && mouseY < m_innerScopeRect.height()
 +                hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs((int)(y - mouseY)) < (int)textDistY && mouseY < m_innerScopeRect.height()
-                         && mouseX < m_innerScopeRect.width() && mouseX >= 0;
+                            && mouseX < m_innerScopeRect.width() && mouseX >= 0;
  
-                 davinci.drawLine(leftDist, y, leftDist + m_innerScopeRect.width()-1, y);
-@@ -245,7 +245,7 @@
-                 x = leftDist + (m_innerScopeRect.width()-1) * ((float)hz)/m_freqMax;
+                 davinci.drawLine(leftDist, y, leftDist + m_innerScopeRect.width() - 1, y);
+@@ -241,7 +241,8 @@
+                 x = leftDist + (m_innerScopeRect.width() - 1) * ((float)hz) / m_freqMax;
  
                  // Hide text if it would overlap with the text drawn at the mouse position
--                hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs(x-(leftDist + mouseX + 20)) < (int) minDistX + 16
+-                hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs(x - (leftDist + mouseX + 20)) < (int) minDistX + 16
 +                hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs((int)(x-(leftDist + mouseX + 20))) < (int) minDistX + 16
-                         && mouseX < m_innerScopeRect.width() && mouseX >= 0;
++
+                            && mouseX < m_innerScopeRect.width() && mouseX >= 0;
  
                  if (x <= rightBorder) {
-@@ -273,7 +273,7 @@
+@@ -268,7 +269,7 @@
              }
              // Draw the line at the very right (maximum frequency)
-             x = leftDist + m_innerScopeRect.width()-1;
--            hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs(x-(leftDist + mouseX + 30)) < (int) minDistX
+             x = leftDist + m_innerScopeRect.width() - 1;
+-            hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs(x - (leftDist + mouseX + 30)) < (int) minDistX
 +            hideText = m_aTrackMouse->isChecked() && m_mouseWithinWidget && abs((int)(x-(leftDist + mouseX + 30))) < (int) minDistX
-                     && mouseX < m_innerScopeRect.width() && mouseX >= 0;
-             davinci.drawLine(x, topDist, x, topDist + m_innerScopeRect.height()+6);
+                        && mouseX < m_innerScopeRect.width() && mouseX >= 0;
+             davinci.drawLine(x, topDist, x, topDist + m_innerScopeRect.height() + 6);
              if (!hideText) {
