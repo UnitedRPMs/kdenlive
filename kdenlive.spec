@@ -1,3 +1,4 @@
+# Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 %global gitdate 20170531
 %global commit0 b9652701524dc594ed24699136fe97e9032691e9
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
@@ -82,11 +83,17 @@ recent video technologies.
 %prep
 %autosetup -n kdenlive-%{commit0} -p0 
 
+# First, fix some issues identified by gcc7:
+sed -e '/KLocal/a #include <functional>' \
+    -i src/profiles/tree/profiletreemodel.cpp  &&
+sed -e '/abs/s/leftDist/(int)&/' \
+    -i src/scopes/audioscopes/spectrogram.cpp
+
 
 %build
 mkdir %{_target_platform}
 pushd %{_target_platform}
-%{cmake_kf5} -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON  ..
+%{cmake_kf5} -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON  ..
 popd
 
 make %{?_smp_mflags} -C %{_target_platform}
