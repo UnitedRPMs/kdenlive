@@ -6,7 +6,7 @@
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 17.04.1
+Version: 17.08.1
 Release: 2%{?gver}%{dist}
 
 License: GPLv2+
@@ -17,8 +17,8 @@ URL:     http://www.kdenlive.org
 %else
 %global stable stable
 %endif
-Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-Patch: gcc7.patch
+#Source0: https://github.com/KDE/kdenlive/archive/{commit0}.tar.gz#/{name}-{shortcommit0}.tar.gz
+Source0: https://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
@@ -81,7 +81,8 @@ recent video technologies.
 
 
 %prep
-%autosetup -n kdenlive-%{commit0} -p0 
+#autosetup -n kdenlive-{commit0} -p0 
+%autosetup -n kdenlive-%{version} 
 
 # First, fix some issues identified by gcc7:
 sed -e '/KLocal/a #include <functional>' \
@@ -101,6 +102,8 @@ make %{?_smp_mflags} -C %{_target_platform}
 
 %install
 make install/fast DESTDIR=%{buildroot} -C %{_target_platform}
+
+%find_lang %{name} --with-kde
 
 
 %check
@@ -126,7 +129,7 @@ fi
 /usr/bin/gtk-update-icon-cache %{_kf5_datadir}/icons/hicolor &> /dev/null || :
 /usr/bin/update-mime-database %{?fedora:-n} %{_kf5_datadir}/mime &> /dev/null || :
 
-%files
+%files -f %{name}.lang
 %doc AUTHORS README
 %license COPYING
 %{_kf5_docdir}/HTML/en/kdenlive/
@@ -142,7 +145,6 @@ fi
 %{_kf5_datadir}/knotifications5/kdenlive.notifyrc
 %{_kf5_datadir}/kservices5/mltpreview.desktop
 %{_kf5_datadir}/kxmlgui5/kdenlive/
-%{_kf5_sysconfdir}/xdg/kdenlive_projectprofiles.knsrc
 %{_kf5_sysconfdir}/xdg/kdenlive_renderprofiles.knsrc
 %{_kf5_sysconfdir}/xdg/kdenlive_titles.knsrc
 %{_kf5_sysconfdir}/xdg/kdenlive_wipes.knsrc
@@ -150,8 +152,13 @@ fi
 %{_kf5_mandir}/man1/kdenlive.1*
 %{_kf5_mandir}/man1/kdenlive_render.1*
 %{_sysconfdir}/xdg/kdenlive.categories
+%{_docdir}/HTML/*/kdenlive/
+
 
 %changelog
+
+* Sun Oct 01 2017 David Vásquez <davidva AT tutanota DOT com> - 17.08.1-2
+- Updated to 17.08.1-2
 
 * Wed May 31 2017 David Vásquez <davidva AT tutanota DOT com> - 17.04.1-2.gitb965270
 - Updated to 17.04.1-2.gitb965270
