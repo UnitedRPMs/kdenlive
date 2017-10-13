@@ -7,7 +7,7 @@
 Name:    kdenlive
 Summary: Non-linear video editor
 Version: 17.08.2
-Release: 2%{?gver}%{dist}
+Release: 2%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
