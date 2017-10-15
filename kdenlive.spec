@@ -7,7 +7,7 @@
 Name:    kdenlive
 Summary: Non-linear video editor
 Version: 17.08.2
-Release: 2%{dist}
+Release: 3%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -72,7 +72,7 @@ Requires: mlt-freeworld%{?_isa} >= %{mlt_version}
 %else
 Requires: mlt%{?_isa} >= %{mlt_version}
 %endif
-Requires: recordmydesktop
+Recommends: recordmydesktop
 Requires: qt5-qtquickcontrols
 
 %description
@@ -156,6 +156,9 @@ fi
 
 
 %changelog
+
+* Sun Oct 15 2017 David Vásquez <davidva AT tutanota DOT com> - 17.08.2-3
+- recordmydesktop retired from official, then changed requires to recommends
 
 * Fri Oct 13 2017 David Vásquez <davidva AT tutanota DOT com> - 17.08.2-2
 - Updated to 17.08.2-2
