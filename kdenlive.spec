@@ -6,8 +6,8 @@
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 17.08.2
-Release: 3%{dist}
+Version: 17.08.3
+Release: 2%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -156,6 +156,9 @@ fi
 
 
 %changelog
+
+* Tue Nov 07 2017 David Vásquez <davidva AT tutanota DOT com> - 17.08.3-2
+- Updated to 17.08.3-2
 
 * Sun Oct 15 2017 David Vásquez <davidva AT tutanota DOT com> - 17.08.2-3
 - recordmydesktop retired from official, then changed requires to recommends
