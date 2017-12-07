@@ -17,7 +17,7 @@ URL:     http://www.kdenlive.org
 %else
 %global stable stable
 %endif
-Source0: https://github.com/KDE/kdenlive/archive/{commit0}.tar.gz#/{name}-{shortcommit0}.tar.gz
+Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 #Source0: https://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 
 BuildRequires: desktop-file-utils
