@@ -1,12 +1,12 @@
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
-%global gitdate 20170531
-%global commit0 b9652701524dc594ed24699136fe97e9032691e9
+%global gitdate 20171206
+%global commit0 856763adbad45b9ebb62616217cadf7a1bb936b3
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 17.08.3
+Version: 17.11.90
 Release: 2%{dist}
 
 License: GPLv2+
@@ -17,8 +17,8 @@ URL:     http://www.kdenlive.org
 %else
 %global stable stable
 %endif
-#Source0: https://github.com/KDE/kdenlive/archive/{commit0}.tar.gz#/{name}-{shortcommit0}.tar.gz
-Source0: https://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0: https://github.com/KDE/kdenlive/archive/{commit0}.tar.gz#/{name}-{shortcommit0}.tar.gz
+#Source0: https://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
@@ -81,8 +81,8 @@ recent video technologies.
 
 
 %prep
-#autosetup -n kdenlive-{commit0} -p0 
-%autosetup -n kdenlive-%{version} 
+%autosetup -n kdenlive-{commit0}  
+#autosetup -n kdenlive-%{version} 
 
 # First, fix some issues identified by gcc7:
 sed -e '/KLocal/a #include <functional>' \
@@ -156,6 +156,9 @@ fi
 
 
 %changelog
+
+* Wed Dec 06 2017 David Vásquez <davidva AT tutanota DOT com> - 17.11.90-2
+- Updated to 17.11.90
 
 * Tue Nov 07 2017 David Vásquez <davidva AT tutanota DOT com> - 17.08.3-2
 - Updated to 17.08.3-2
