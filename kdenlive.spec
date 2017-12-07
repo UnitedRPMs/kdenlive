@@ -18,7 +18,8 @@ URL:     http://www.kdenlive.org
 %global stable stable
 %endif
 Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
-#Source0: https://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+#Source0: https://download.kde.org/stable/applications/{version}/src/{name}-{version}.tar.xz
+Source1: https://github.com/UnitedRPMs/kdenlive/releases/download/lang/lang.tar.gz
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
@@ -81,7 +82,7 @@ recent video technologies.
 
 
 %prep
-%autosetup -n kdenlive-{commit0}  
+%autosetup -n kdenlive-%{commit0} -a 1 
 #autosetup -n kdenlive-%{version} 
 
 # First, fix some issues identified by gcc7:
@@ -89,6 +90,12 @@ sed -e '/KLocal/a #include <functional>' \
     -i src/profiles/tree/profiletreemodel.cpp  &&
 sed -e '/abs/s/leftDist/(int)&/' \
     -i src/scopes/audioscopes/spectrogram.cpp
+
+# LANG
+echo 'ki18n_install(po)
+if (KF5DocTools_FOUND)
+ kdoctools_install(po)
+endif()' >> CMakeLists.txt
 
 
 %build
