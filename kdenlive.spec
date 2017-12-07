@@ -143,7 +143,7 @@ fi
 %{_kf5_bindir}/kdenlive_render
 %{_kf5_bindir}/%{name}
 %{_kf5_datadir}/applications/org.kde.%{name}.desktop
-%{_kf5_datadir}/appdata/org.kde.%{name}.appdata.xml
+%{_kf5_datadir}/appdata/*.appdata.xml
 %{_kf5_datadir}/kdenlive/
 %{_kf5_datadir}/mime/packages/kdenlive.xml
 %{_kf5_datadir}/mime/packages/westley.xml
