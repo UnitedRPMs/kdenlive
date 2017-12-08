@@ -143,7 +143,11 @@ fi
 %{_kf5_bindir}/kdenlive_render
 %{_kf5_bindir}/%{name}
 %{_kf5_datadir}/applications/org.kde.%{name}.desktop
+%if 0%{?fedora} >= 28
+%{_kf5_datadir}/metainfo/org.kde.kdenlive.appdata.xml
+%else
 %{_kf5_datadir}/appdata/*.appdata.xml
+%endif
 %{_kf5_datadir}/kdenlive/
 %{_kf5_datadir}/mime/packages/kdenlive.xml
 %{_kf5_datadir}/mime/packages/westley.xml
