@@ -1,12 +1,12 @@
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
-%global gitdate 20171206
-%global commit0 856763adbad45b9ebb62616217cadf7a1bb936b3
+%global gitdate 20171215
+%global commit0 91186164a886e6f2e09a132505d993884eb1e622
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 17.11.90
+Version: 17.12.0
 Release: 2%{dist}
 
 License: GPLv2+
@@ -167,6 +167,9 @@ fi
 
 
 %changelog
+
+* Fri Dec 15 2017 David Vásquez <davidva AT tutanota DOT com> - 17.12.0-2
+- Updated to 17.12.0-2
 
 * Wed Dec 06 2017 David Vásquez <davidva AT tutanota DOT com> - 17.11.90-2
 - Updated to 17.11.90
