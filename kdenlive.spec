@@ -97,6 +97,11 @@ sed -e '/abs/s/leftDist/(int)&/' \
 # kdoctools_install(po)
 #endif()' >> CMakeLists.txt
 
+# cmake 3.10 fix
+%if 0%{?fedora} >= 28
+sed -i '/project(Kdenlive)/a SET_SOURCE_FILES_PROPERTIES(${_impl} PROPERTIES SKIP_AUTOMOC TRUE)' CMakeLists.txt
+%endif
+
 
 %build
 mkdir %{_target_platform}
@@ -143,7 +148,7 @@ fi
 %{_kf5_bindir}/kdenlive_render
 %{_kf5_bindir}/%{name}
 %{_kf5_datadir}/applications/org.kde.%{name}.desktop
-%if 0%{?fedora} >= 27
+%if 0%{?fedora} >= 26
 %{_kf5_datadir}/metainfo/org.kde.kdenlive.appdata.xml
 %else
 %{_kf5_datadir}/appdata/*.appdata.xml
