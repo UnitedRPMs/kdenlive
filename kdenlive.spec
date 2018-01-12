@@ -168,7 +168,7 @@ fi
 
 %changelog
 
-* Thu Jan 11 2017 David Vásquez <davidva AT tutanota DOT com> - 17.12.1-2
+* Thu Jan 11 2018 David Vásquez <davidva AT tutanota DOT com> - 17.12.1-2
 - Updated to 17.12.1-2
 
 * Fri Dec 15 2017 David Vásquez <davidva AT tutanota DOT com> - 17.12.0-2
