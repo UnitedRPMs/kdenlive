@@ -1,12 +1,12 @@
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 %global gitdate 20180307
-%global commit0 5a05e9d500b04b0a650d8401751765729b36afd5
+%global commit0 88d7b9cc514155626beb0936faa411541f3840fb
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 17.12.3
+Version: 18.03.90
 Release: 2%{dist}
 
 License: GPLv2+
@@ -119,8 +119,12 @@ make install/fast DESTDIR=%{buildroot} -C %{_target_platform}
 
 
 %check
+%if 0%{?fedora} >= 28
+appstream-util validate-relax --nonet %{buildroot}/%{_kf5_datadir}/metainfo/org.kde.%{name}.appdata.xml ||:
+%else
 appstream-util validate-relax --nonet %{buildroot}%{_kf5_datadir}/appdata/org.kde.%{name}.appdata.xml ||:
-desktop-file-validate %{buildroot}%{_kf5_datadir}/applications/org.kde.%{name}.desktop
+%endif
+desktop-file-validate %{buildroot}/%{_kf5_datadir}/applications/org.kde.%{name}.desktop
 
 
 %post
@@ -172,6 +176,9 @@ fi
 
 
 %changelog
+
+* Fri Apr 13 2018 David Vásquez <davidva AT tutanota DOT com> - 18.03.90-2
+- Updated to 18.03.90
 
 * Wed Mar 07 2018 David Vásquez <davidva AT tutanota DOT com> - 17.12.3-2
 - Updated to 17.12.3
