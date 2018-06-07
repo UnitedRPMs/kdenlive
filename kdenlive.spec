@@ -148,7 +148,6 @@ fi
 %files -f %{name}.lang
 %doc AUTHORS README
 %license COPYING
-%{_kf5_docdir}/HTML/en/kdenlive/
 %{_kf5_bindir}/kdenlive_render
 %{_kf5_bindir}/%{name}
 %{_kf5_datadir}/applications/org.kde.%{name}.desktop
@@ -158,7 +157,7 @@ fi
 %{_kf5_datadir}/appdata/*.appdata.xml
 %endif
 %{_kf5_datadir}/kdenlive/
-%{_kf5_datadir}/mime/packages/kdenlive.xml
+%{_kf5_datadir}/mime/packages/org.kde.kdenlive.xml
 %{_kf5_datadir}/mime/packages/westley.xml
 %{_kf5_datadir}/icons/hicolor/*/*/*
 %{_kf5_datadir}/config.kcfg/kdenlivesettings.kcfg
