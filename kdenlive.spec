@@ -148,6 +148,7 @@ fi
 %files -f %{name}.lang
 %doc AUTHORS README
 %license COPYING
+%{_docdir}/Kdenlive/
 %{_kf5_bindir}/kdenlive_render
 %{_kf5_bindir}/%{name}
 %{_kf5_datadir}/applications/org.kde.%{name}.desktop
