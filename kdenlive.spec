@@ -7,7 +7,7 @@
 Name:    kdenlive
 Summary: Non-linear video editor
 Version: 18.08.3
-Release: 2%{dist}
+Release: 3%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -20,6 +20,7 @@ URL:     http://www.kdenlive.org
 Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 #Source0: https://download.kde.org/stable/applications/{version}/src/{name}-{version}.tar.xz
 Source1: https://github.com/UnitedRPMs/kdenlive/releases/download/lang/lang.tar.gz
+Patch: mlt_fix.patch
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
@@ -82,7 +83,7 @@ recent video technologies.
 
 
 %prep
-%autosetup -n kdenlive-%{commit0} -a 1 
+%autosetup -n kdenlive-%{commit0} -p1 -a 1 
 #autosetup -n kdenlive-%{version} 
 
 # First, fix some issues identified by gcc7:
@@ -176,6 +177,9 @@ fi
 
 
 %changelog
+
+* Sat Nov 10 2018 David Va <davidva AT tuta DOT io> 18.08.3-3
+- MLT fix path
 
 * Thu Nov 08 2018 David Va <davidva AT tuta DOT io> 18.08.3-2
 - Updated to 18.08.3

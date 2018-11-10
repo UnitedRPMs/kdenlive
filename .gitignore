@@ -5,3 +5,5 @@ SPECS/*
 SRPMS/*
 kdenlive*.tar.gz
 .directory
+orig/*
+new/*

@@ -1,0 +1,14 @@
+diff -ruN orig/src/mltconnection.cpp new/src/mltconnection.cpp
+--- orig/src/mltconnection.cpp	2018-11-05 16:23:29.000000000 -0600
++++ new/src/mltconnection.cpp	2018-11-10 14:37:44.575619640 -0600
+@@ -60,8 +60,8 @@
+ #else
+     QString exeSuffix = "";
+ #endif
+-    QString meltPath = qgetenv("MLT_PREFIX") + QStringLiteral("/bin/melt") + exeSuffix;
+-    if (!QFile::exists(meltPath)) meltPath = QDir::cleanPath(profilePath + QStringLiteral("../../../bin/melt") + exeSuffix);
++    QString meltPath = qgetenv("MLT_PREFIX") + QStringLiteral("/bin/mlt-melt") + exeSuffix;
++    if (!QFile::exists(meltPath)) meltPath = QDir::cleanPath(profilePath + QStringLiteral("../../../bin/mlt-melt") + exeSuffix);
+     if (!QFile::exists(meltPath)) meltPath = QStandardPaths::findExecutable("melt");
+     KdenliveSettings::setRendererpath(meltPath);
+ 
