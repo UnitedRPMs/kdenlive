@@ -178,7 +178,7 @@ fi
 
 %changelog
 
-* Thu Jan 10 2018 David Va <davidva AT tuta DOT io> 18.12.1-3
+* Thu Jan 10 2019 David Va <davidva AT tuta DOT io> 18.12.1-3
 - Updated to 18.12.1
 
 * Tue Dec 11 2018 David Va <davidva AT tuta DOT io> 18.12.0-3
