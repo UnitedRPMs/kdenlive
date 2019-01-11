@@ -20,7 +20,7 @@ URL:     http://www.kdenlive.org
 Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 #Source0: https://download.kde.org/stable/applications/{version}/src/{name}-{version}.tar.xz
 Source1: https://github.com/UnitedRPMs/kdenlive/releases/download/lang/lang.tar.gz
-Patch: mlt_fix.patch
+Patch:	mlt_fix.patch
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
