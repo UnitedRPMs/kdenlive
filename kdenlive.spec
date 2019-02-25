@@ -25,6 +25,7 @@ Patch:	mlt_fix.patch
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
 BuildRequires: gettext
+BuildRequires: qt5-qtbase
 BuildRequires: cmake(KF5Archive)
 BuildRequires: cmake(KF5Bookmarks)
 BuildRequires: cmake(KF5Config)
