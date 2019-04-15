@@ -1,15 +1,17 @@
-diff -ruN orig/src/mltconnection.cpp new/src/mltconnection.cpp
---- orig/src/mltconnection.cpp	2019-01-07 06:24:05.000000000 -0600
-+++ new/src/mltconnection.cpp	2019-01-11 00:35:14.182675432 -0600
-@@ -68,9 +68,9 @@
+--- a/src/mltconnection.cpp	2019-04-04 11:11:51.000000000 -0600
++++ b/src/NEW.cpp	2019-04-14 21:04:27.883999474 -0600
+@@ -94,12 +94,12 @@
  #endif
      QString meltPath;
-     if (qEnvironmentVariableIsSet("MLT_PREFIX"))
+     if (qEnvironmentVariableIsSet("MLT_PREFIX")) {
 -        meltPath = qgetenv("MLT_PREFIX") + QStringLiteral("/bin/melt") + exeSuffix;
 +        meltPath = qgetenv("MLT_PREFIX") + QStringLiteral("/bin/mlt-melt") + exeSuffix;
+     } else {
+         meltPath = KdenliveSettings::rendererpath();
+     }
      if (!QFile::exists(meltPath)) {
 -        meltPath = QDir::cleanPath(profilePath + QStringLiteral("/../../../bin/melt")) + exeSuffix;
 +        meltPath = QDir::cleanPath(profilePath + QStringLiteral("/../../../bin/mlt-melt")) + exeSuffix;
-     }
-     if (!QFile::exists(meltPath)) {
-         meltPath = QStandardPaths::findExecutable("melt");
+         if (!QFile::exists(meltPath)) {
+             meltPath = QStandardPaths::findExecutable("melt");
+             if (meltPath.isEmpty()) {

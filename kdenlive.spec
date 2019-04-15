@@ -26,6 +26,10 @@ BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
 BuildRequires: gettext
 BuildRequires: qt5-qtbase
+BuildRequires: make
+BuildRequires: cmake(Qt5Multimedia)
+BuildRequires: cmake(KF5Declarative)
+BuildRequires: cmake(KF5Purpose)
 BuildRequires: cmake(KF5Archive)
 BuildRequires: cmake(KF5Bookmarks)
 BuildRequires: cmake(KF5Config)
@@ -148,7 +152,7 @@ fi
 /usr/bin/update-mime-database %{?fedora:-n} %{_kf5_datadir}/mime &> /dev/null || :
 
 %files -f %{name}.lang
-%doc AUTHORS README
+%doc AUTHORS README.md
 %license COPYING
 %{_docdir}/Kdenlive/
 %{_kf5_bindir}/kdenlive_render
@@ -173,6 +177,7 @@ fi
 %{_kf5_qtplugindir}/mltpreview.so
 %{_kf5_mandir}/man1/kdenlive.1*
 %{_kf5_mandir}/man1/kdenlive_render.1*
+%{_sysconfdir}/xdg/kdenlive_keyboardschemes.knsrc
 %{_sysconfdir}/xdg/kdenlive.categories
 %{_docdir}/HTML/*/kdenlive/
 
