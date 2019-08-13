@@ -11,12 +11,6 @@ Release: 7%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
-%global revision %(echo %{version} | cut -d. -f3)
-%if %{revision} >= 50
-%global stable unstable
-%else
-%global stable stable
-%endif
 Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 #Source0: https://download.kde.org/stable/applications/{version}/src/{name}-{version}.tar.xz
 Source1: https://github.com/UnitedRPMs/kdenlive/releases/download/lang/lang.tar.gz
