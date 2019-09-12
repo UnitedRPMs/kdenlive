@@ -1,13 +1,13 @@
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
-%global gitdate 20190820
-%global commit0 ea9d42fa9632871524b7757b6f21e1d90f733d0f
+%global gitdate 20190911
+%global commit0 65eed5183f03e837fa8fe929ebf9d38e5da78789
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 19.08.0
-Release: 8%{dist}
+Version: 19.08.1
+Release: 7%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -181,6 +181,9 @@ fi
 
 
 %changelog
+
+* Wed Sep 11 2019 David Va <davidva AT tuta DOT io> 19.08.1-7
+- Updated to 19.08.1
 
 * Tue Aug 20 2019 David Va <davidva AT tuta DOT io> 19.08.0-8
 - Updated to current commit stable
