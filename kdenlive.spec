@@ -172,7 +172,7 @@ fi
 %{_kf5_mandir}/man1/kdenlive.1*
 %{_kf5_mandir}/man1/kdenlive_render.1*
 %{_sysconfdir}/xdg/kdenlive_keyboardschemes.knsrc
-%if 0%{?fedora} >= 30
+%if 0%{?fedora} >= 29
 %{_kf5_datadir}/qlogging-categories5/kdenlive.categories
 %else
 %{_sysconfdir}/xdg/kdenlive.categories
