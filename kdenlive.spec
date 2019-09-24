@@ -7,7 +7,7 @@
 Name:    kdenlive
 Summary: Non-linear video editor
 Version: 19.08.1
-Release: 7%{dist}
+Release: 8%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -75,6 +75,7 @@ Requires: mlt%{?_isa} >= %{mlt_version}
 %endif
 Recommends: recordmydesktop
 Requires: qt5-qtquickcontrols
+Requires: frei0r-plugins
 
 %description
 Kdenlive is an intuitive and powerful multi-track video editor, including most
@@ -181,6 +182,9 @@ fi
 
 
 %changelog
+
+* Mon Sep 23 2019 David Va <davidva AT tuta DOT io> 19.08.1-8
+- Added Requires frei0r-plugins
 
 * Wed Sep 11 2019 David Va <davidva AT tuta DOT io> 19.08.1-7
 - Updated to 19.08.1
