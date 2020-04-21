@@ -78,6 +78,7 @@ BuildRequires: pkgconfig(Qt5Qml)
 BuildRequires: pkgconfig(Qt5Quick)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5WebKitWidgets)
+BuildRequires: pkgconfig(Qt5QuickControls2)
 
 ## workaround for missing dependency in kf5-kio, can remove
 ## once kf5-kio-5.24.0-2 (or newer is available)
