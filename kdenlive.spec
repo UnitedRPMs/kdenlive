@@ -25,7 +25,7 @@
 Name:    kdenlive
 Summary: Non-linear video editor
 Version: 20.04.1
-Release: 7%{dist}
+Release: 8%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -64,6 +64,7 @@ BuildRequires: cmake(KF5XmlGui)
 BuildRequires: cmake(KF5Crash)
 BuildRequires: cmake(KF5FileMetaData)
 BuildRequires: libappstream-glib
+BuildRequires: librttr-devel
 
 BuildRequires: pkgconfig(libv4l2)
 BuildRequires: pkgconfig(mlt++) >= 6.0
@@ -201,6 +202,9 @@ fi
 
 
 %changelog
+
+* Thu May 21 2020 David Va <davidva AT tuta DOT io> 20.04.1-8
+- Added missed librttr
 
 * Fri May 15 2020 David Va <davidva AT tuta DOT io> 20.04.1-7
 - Updated to 20.04.1
