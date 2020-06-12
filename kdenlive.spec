@@ -18,14 +18,14 @@
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
 %global gitdate 20200515
-%global commit0 22c0809aad66e43b37811dd938aba581ea0ae85c
+%global commit0 7dd81585a0b1ba99dcef23e1afdb48721e83c995
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 20.04.1
-Release: 8%{dist}
+Version: 20.04.2
+Release: 7%{dist}
 
 License: GPLv2+
 URL:     http://www.kdenlive.org
@@ -202,6 +202,9 @@ fi
 
 
 %changelog
+
+* Thu Jun 11 2020 David Va <davidva AT tuta DOT io> 20.04.2-7
+- Updated to 20.04.2
 
 * Thu May 21 2020 David Va <davidva AT tuta DOT io> 20.04.1-8
 - Added missed librttr
