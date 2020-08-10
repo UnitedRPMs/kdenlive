@@ -17,14 +17,14 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global gitdate 20200709
-%global commit0 78af26f3bfbdaa3b9cae46c0f6db75015d6d21b4
+%global gitdate 20200808
+%global commit0 66fdf2e060b8096d792030b5d4caae758ba873f2
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 20.04.3
+Version: 20.07.90
 Release: 7%{dist}
 
 License: GPLv2+
@@ -67,7 +67,7 @@ BuildRequires: libappstream-glib
 BuildRequires: librttr-devel
 
 BuildRequires: pkgconfig(libv4l2)
-BuildRequires: pkgconfig(mlt++) >= 6.0
+BuildRequires: pkgconfig(mlt++) >= 6.22.1
 %global mlt_version %(pkg-config --modversion mlt++ 2>/dev/null || echo 6.0)
 
 BuildRequires: pkgconfig(Qt5Concurrent)
@@ -128,13 +128,15 @@ sed -i '/project(Kdenlive)/a SET_SOURCE_FILES_PROPERTIES(${_impl} PROPERTIES SKI
 mkdir %{_target_platform}
 pushd %{_target_platform}
 %{cmake_kf5} -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON  ..
+
+
+%cmake_build 
 popd
 
-make %{?_smp_mflags} -C %{_target_platform}
-
-
 %install
-make install/fast DESTDIR=%{buildroot} -C %{_target_platform}
+pushd %{_target_platform}
+%cmake_install 
+popd
 
 %find_lang %{name} --with-kde
 
@@ -166,7 +168,7 @@ fi
 /usr/bin/gtk-update-icon-cache %{_kf5_datadir}/icons/hicolor &> /dev/null || :
 /usr/bin/update-mime-database %{?fedora:-n} %{_kf5_datadir}/mime &> /dev/null || :
 
-%files -f %{name}.lang
+%files -f kdenlive.lang
 %doc AUTHORS README.md
 %license COPYING
 %{_docdir}/Kdenlive/
@@ -202,6 +204,9 @@ fi
 
 
 %changelog
+
+* Sat Aug 08 2020 David Va <davidva AT tuta DOT io> 20.07.90-7
+- Updated to 20.07.90
 
 * Thu Jul 09 2020 David Va <davidva AT tuta DOT io> 20.04.3-7
 - Updated to 20.04.3
