@@ -18,13 +18,13 @@
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
 %global gitdate 20200808
-%global commit0 1c923e886214a0854a6207ee55e83f75269bb1e0
+%global commit0 c7dc53a88daab21a65705d0b5ac8f4ba8d4f5a6f
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 20.08.1
+Version: 20.08.2
 Release: 7%{dist}
 
 License: GPLv2+
@@ -188,13 +188,15 @@ fi
 %{_kf5_datadir}/knotifications5/kdenlive.notifyrc
 %{_kf5_datadir}/kservices5/mltpreview.desktop
 %{_kf5_datadir}/kxmlgui5/kdenlive/
-%{_kf5_sysconfdir}/xdg/kdenlive_renderprofiles.knsrc
-%{_kf5_sysconfdir}/xdg/kdenlive_titles.knsrc
-%{_kf5_sysconfdir}/xdg/kdenlive_wipes.knsrc
+%{_kf5_datadir}/knsrcfiles/kdenlive_keyboardschemes.knsrc
+%{_kf5_datadir}/knsrcfiles/kdenlive_renderprofiles.knsrc
+%{_kf5_datadir}/knsrcfiles/kdenlive_titles.knsrc
+%{_kf5_datadir}/knsrcfiles/kdenlive_wipes.knsrc
+
 %{_kf5_qtplugindir}/mltpreview.so
 %{_kf5_mandir}/man1/kdenlive.1*
 %{_kf5_mandir}/man1/kdenlive_render.1*
-%{_sysconfdir}/xdg/kdenlive_keyboardschemes.knsrc
+#{_sysconfdir}/xdg/kdenlive_keyboardschemes.knsrc
 %if 0%{?fedora} >= 29
 %{_kf5_datadir}/qlogging-categories5/kdenlive.categories
 %else
@@ -204,6 +206,9 @@ fi
 
 
 %changelog
+
+* Sat Oct 10 2020 David Va <davidva AT tuta DOT io> 20.08.2-7
+- Updated to 20.08.2
 
 * Mon Sep 14 2020 David Va <davidva AT tuta DOT io> 20.08.1-7
 - Updated to 20.08.1
