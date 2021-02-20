@@ -1,7 +1,7 @@
 #
 # spec file for package kdenlive
 #
-# Copyright (c) 2020 UnitedRPMs.
+# Copyright (c) 2021 UnitedRPMs.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -18,13 +18,13 @@
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
 %global gitdate 20200808
-%global commit0 e6d6934ff907eeaf678226812afaabf71479458f
+%global commit0 d4b9ee6528f7de95a77427a52f010ba2808cee96
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 20.12.1
+Version: 20.12.2
 Release: 7%{dist}
 
 License: GPLv2+
@@ -206,6 +206,9 @@ fi
 
 
 %changelog
+
+* Mon Feb 15 2021 David Va <davidva AT tuta DOT io> 20.12.2-7
+- Updated to 20.12.2
 
 * Mon Jan 11 2021 David Va <davidva AT tuta DOT io> 20.12.1-7
 - Updated to 20.12.1
