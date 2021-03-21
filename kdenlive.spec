@@ -18,13 +18,13 @@
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
 %global gitdate 20200808
-%global commit0 d4b9ee6528f7de95a77427a52f010ba2808cee96
+%global commit0 d948801db962bac3e751bff3a6ed2728d8b63c80
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 20.12.2
+Version: 20.12.3
 Release: 7%{dist}
 
 License: GPLv2+
@@ -38,7 +38,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
 BuildRequires: gettext
 BuildRequires: qt5-qtbase
-BuildRequires: make
+BuildRequires: make python3-devel
 BuildRequires: cmake(Qt5Multimedia)
 BuildRequires: cmake(KF5Declarative)
 BuildRequires: cmake(KF5Purpose)
@@ -123,6 +123,7 @@ sed -e '/abs/s/leftDist/(int)&/' \
 sed -i '/project(Kdenlive)/a SET_SOURCE_FILES_PROPERTIES(${_impl} PROPERTIES SKIP_AUTOMOC TRUE)' CMakeLists.txt
 %endif
 
+find -depth -type f -writable -name "*.py" -exec sed -iE '1s=^#! */usr/bin/\(python\|env python\)[23]\?=#!%{__python3}=' {} +
 
 %build
 mkdir %{_target_platform}
@@ -206,6 +207,9 @@ fi
 
 
 %changelog
+
+* Sat Mar 20 2021 David Va <davidva AT tuta DOT io> 20.12.3-7
+- Updated to 20.12.3
 
 * Mon Feb 15 2021 David Va <davidva AT tuta DOT io> 20.12.2-7
 - Updated to 20.12.2
