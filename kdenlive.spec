@@ -17,14 +17,13 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global gitdate 20200808
-%global commit0 d948801db962bac3e751bff3a6ed2728d8b63c80
+%global commit0 1c432a5555448bbc7cc63383237c9436d7062075
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 20.12.3
+Version: 21.03.90
 Release: 7%{dist}
 
 License: GPLv2+
@@ -80,6 +79,7 @@ BuildRequires: pkgconfig(Qt5Quick)
 BuildRequires: pkgconfig(Qt5Widgets)
 BuildRequires: pkgconfig(Qt5WebKitWidgets)
 BuildRequires: pkgconfig(Qt5QuickControls2)
+BuildRequires: pkgconfig(Qt5NetworkAuth)
 
 ## workaround for missing dependency in kf5-kio, can remove
 ## once kf5-kio-5.24.0-2 (or newer is available)
@@ -193,6 +193,7 @@ fi
 %{_kf5_datadir}/knsrcfiles/kdenlive_renderprofiles.knsrc
 %{_kf5_datadir}/knsrcfiles/kdenlive_titles.knsrc
 %{_kf5_datadir}/knsrcfiles/kdenlive_wipes.knsrc
+%{_kf5_datadir}/knsrcfiles/kdenlive_luts.knsrc
 
 %{_kf5_qtplugindir}/mltpreview.so
 %{_kf5_mandir}/man1/kdenlive.1*
@@ -207,6 +208,9 @@ fi
 
 
 %changelog
+
+* Mon Apr 19 2021 David Va <davidva AT tuta DOT io> 21.03.90-7
+- Updated to 21.03.90
 
 * Sat Mar 20 2021 David Va <davidva AT tuta DOT io> 20.12.3-7
 - Updated to 20.12.3
