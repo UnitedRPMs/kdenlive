@@ -94,7 +94,9 @@ Requires: mlt-freeworld%{?_isa} >= %{mlt_version}
 Requires: mlt%{?_isa} >= %{mlt_version}
 %endif
 Recommends: recordmydesktop
+Recommends: plasma-desktop
 Requires: qt5-qtquickcontrols2
+Requires: qt5-qtquickcontrols
 Requires: frei0r-plugins
 
 %description
