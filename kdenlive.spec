@@ -196,6 +196,9 @@ fi
 %{_kf5_datadir}/knsrcfiles/kdenlive_titles.knsrc
 %{_kf5_datadir}/knsrcfiles/kdenlive_wipes.knsrc
 %{_kf5_datadir}/knsrcfiles/kdenlive_luts.knsrc
+%if 0%{?fedora} <= 33
+%{_datadir}/icons/breeze-dark/
+%endif
 
 %{_kf5_qtplugindir}/mltpreview.so
 %{_kf5_mandir}/man1/kdenlive.1*
