@@ -17,13 +17,13 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global commit0 ccc7884ba56e6781d0bfc4020b3a000e9729068e
+%global commit0 383b454c1e4a1a71451b789e061039d7e92d659e
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 21.04.0
+Version: 21.04.1
 Release: 7%{dist}
 
 License: GPLv2+
@@ -213,6 +213,9 @@ fi
 
 
 %changelog
+
+* Sat May 22 2021 David Va <davidva AT tuta DOT io> 21.04.1-7
+- Updated to 21.04.1
 
 * Mon Apr 26 2021 David Va <davidva AT tuta DOT io> 21.04.0-7
 - Updated to 21.04.0
