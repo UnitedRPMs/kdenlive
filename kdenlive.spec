@@ -17,13 +17,13 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global commit0 383b454c1e4a1a71451b789e061039d7e92d659e
+%global commit0 e2da06720b9116199e6ef26ea006592f9b8734ac
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 21.04.1
+Version: 21.04.2
 Release: 7%{dist}
 
 License: GPLv2+
@@ -31,7 +31,9 @@ URL:     http://www.kdenlive.org
 Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 #Source0: https://download.kde.org/stable/applications/{version}/src/{name}-{version}.tar.xz
 Source1: https://github.com/UnitedRPMs/kdenlive/releases/download/lang/lang.tar.gz
+Source2: kdenlive
 Patch:	mlt_fix.patch
+Patch1:	https://invent.kde.org/multimedia/kdenlive/commit/be5f24f72a6b4189b6069a71bef53041689a330a.patch
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
@@ -141,6 +143,7 @@ pushd %{_target_platform}
 %cmake_install 
 popd
 
+
 %find_lang %{name} --with-kde
 
 
@@ -213,6 +216,9 @@ fi
 
 
 %changelog
+
+* Sat Jun 19 2021 David Va <davidva AT tuta DOT io> 21.04.2-7
+- Updated to 21.04.2
 
 * Sat May 22 2021 David Va <davidva AT tuta DOT io> 21.04.1-7
 - Updated to 21.04.1

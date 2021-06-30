@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+
+run_kdenlive() {
+    exec /usr/bin/kdenlive-gui
+    exit 0
+}
+
+export export QT_QPA_PLATFORM=xcb
+
+
+run_kdenlive 
