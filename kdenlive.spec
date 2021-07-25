@@ -17,13 +17,13 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global commit0 e2da06720b9116199e6ef26ea006592f9b8734ac
+%global commit0 8f54fb2a21d27821aa26aa078832e4aa50931766
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 21.04.2
+Version: 21.07.80
 Release: 7%{dist}
 
 License: GPLv2+
@@ -32,8 +32,7 @@ Source0: https://github.com/KDE/kdenlive/archive/%{commit0}.tar.gz#/%{name}-%{sh
 #Source0: https://download.kde.org/stable/applications/{version}/src/{name}-{version}.tar.xz
 Source1: https://github.com/UnitedRPMs/kdenlive/releases/download/lang/lang.tar.gz
 Source2: kdenlive
-Patch:	mlt_fix.patch
-Patch1:	https://invent.kde.org/multimedia/kdenlive/commit/be5f24f72a6b4189b6069a71bef53041689a330a.patch
+
 
 BuildRequires: desktop-file-utils
 BuildRequires: extra-cmake-modules
@@ -68,8 +67,8 @@ BuildRequires: libappstream-glib
 BuildRequires: librttr-devel
 
 BuildRequires: pkgconfig(libv4l2)
-BuildRequires: pkgconfig(mlt++) >= 6.22.1
-%global mlt_version %(pkg-config --modversion mlt++ 2>/dev/null || echo 6.0)
+BuildRequires: mlt7-devel >= 7.0.1
+%global mlt_version %(pkg-config --modversion mlt++ 2>/dev/null || echo 7.0)
 
 BuildRequires: pkgconfig(Qt5Concurrent)
 BuildRequires: pkgconfig(Qt5DBus)
@@ -90,11 +89,7 @@ BuildRequires: kf5-kinit-devel
 Requires: dvdauthor
 Requires: dvgrab
 Requires: ffmpeg
-%if 0%{?fedora} > 24
-Requires: mlt-freeworld%{?_isa} >= %{mlt_version}
-%else
-Requires: mlt%{?_isa} >= %{mlt_version}
-%endif
+Requires: mlt7-freeworld%{?_isa} >= %{mlt_version}
 Recommends: recordmydesktop
 Recommends: plasma-desktop
 Requires: qt5-qtquickcontrols2
@@ -216,6 +211,9 @@ fi
 
 
 %changelog
+
+* Thu Jul 22 2021 David Va <davidva AT tuta DOT io> 21.07.80-7
+- Updated to 21.07.80
 
 * Sat Jun 19 2021 David Va <davidva AT tuta DOT io> 21.04.2-7
 - Updated to 21.04.2
