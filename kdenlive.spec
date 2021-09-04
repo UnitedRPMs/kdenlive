@@ -17,13 +17,13 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global commit0 d8e2d36c415ce91e644da0c63da5f86f4616c1ec
+%global commit0 226c550b10b2366a130edc19512940f150db7bfe
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 21.08.0
+Version: 21.08.1
 Release: 7%{dist}
 
 License: GPLv2+
@@ -211,6 +211,9 @@ fi
 
 
 %changelog
+
+* Fri Sep 03 2021 David Va <davidva AT tuta DOT io> 21.08.1-7
+- Updated to 21.08.1
 
 * Thu Aug 12 2021 David Va <davidva AT tuta DOT io> 21.08.0-7
 - Updated to 21.08.0
