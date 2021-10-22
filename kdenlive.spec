@@ -17,13 +17,13 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global commit0 226c550b10b2366a130edc19512940f150db7bfe
+%global commit0 a753a7777396ae8e1dff7b0e3d1cbf4035c2c1f5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 21.08.1
+Version: 21.08.2
 Release: 7%{dist}
 
 License: GPLv2+
@@ -197,6 +197,7 @@ fi
 %if 0%{?fedora} <= 33
 %{_datadir}/icons/breeze-dark/
 %endif
+%{_kf5_datadir}/effects/
 
 %{_kf5_qtplugindir}/mltpreview.so
 %{_kf5_mandir}/man1/kdenlive.1*
@@ -211,6 +212,9 @@ fi
 
 
 %changelog
+
+* Fri Oct 22 2021 David Va <davidva AT tuta DOT io> 21.08.2-7
+- Updated to 21.08.2
 
 * Fri Sep 03 2021 David Va <davidva AT tuta DOT io> 21.08.1-7
 - Updated to 21.08.1
