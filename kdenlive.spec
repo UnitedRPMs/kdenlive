@@ -1,7 +1,7 @@
 #
 # spec file for package kdenlive
 #
-# Copyright (c) 2021 UnitedRPMs.
+# Copyright (c) 2022 UnitedRPMs.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -17,13 +17,13 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global commit0 a753a7777396ae8e1dff7b0e3d1cbf4035c2c1f5
+%global commit0 06488676f08f467f41988d694e4b7927bb9c8412
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 21.08.2
+Version: 21.12.1
 Release: 7%{dist}
 
 License: GPLv2+
@@ -65,6 +65,8 @@ BuildRequires: cmake(KF5Crash)
 BuildRequires: cmake(KF5FileMetaData)
 BuildRequires: libappstream-glib
 BuildRequires: librttr-devel
+BuildRequires: libsndfile
+BuildRequires: flac-libs
 
 BuildRequires: pkgconfig(libv4l2)
 BuildRequires: mlt7-devel >= 7.0.1
@@ -197,7 +199,6 @@ fi
 %if 0%{?fedora} <= 33
 %{_datadir}/icons/breeze-dark/
 %endif
-%{_kf5_datadir}/effects/
 
 %{_kf5_qtplugindir}/mltpreview.so
 %{_kf5_mandir}/man1/kdenlive.1*
@@ -212,6 +213,12 @@ fi
 
 
 %changelog
+
+* Wed Jan 12 2022 David Va <davidva AT tuta DOT io> 21.12.1-7
+- Updated to 21.12.1
+
+* Wed Dec 15 2021 David Va <davidva AT tuta DOT io> 21.12.0-7
+- Updated to 21.12.0
 
 * Fri Oct 22 2021 David Va <davidva AT tuta DOT io> 21.08.2-7
 - Updated to 21.08.2
