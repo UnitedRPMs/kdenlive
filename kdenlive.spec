@@ -17,13 +17,13 @@
 
 # Guide thanks to http://www.linuxfromscratch.org/blfs/view/cvs/kde/kdenlive.html
 
-%global commit0 f1ca6d017b65f58ec17e12afc97cc27f0e0c4093
+%global commit0 cd7a0db421c6ed353f54bd9a1cf35fefdcdaec6c
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:    kdenlive
 Summary: Non-linear video editor
-Version: 21.12.2
+Version: 21.12.3
 Release: 7%{dist}
 
 License: GPLv2+
@@ -65,7 +65,11 @@ BuildRequires: cmake(KF5Crash)
 BuildRequires: cmake(KF5FileMetaData)
 BuildRequires: libappstream-glib
 BuildRequires: librttr-devel
+#------wtf?
 BuildRequires: libsndfile
+BuildRequires: opus
+BuildRequires: libogg
+#------
 BuildRequires: flac-libs
 
 BuildRequires: pkgconfig(libv4l2)
@@ -213,6 +217,9 @@ fi
 
 
 %changelog
+
+* Sun Mar 13 2022 David Va <davidva AT tuta DOT io> 21.12.3-7
+- Updated to 21.12.3
 
 * Wed Mar 02 2022 David Va <davidva AT tuta DOT io> 21.12.2-7
 - Updated to 21.12.2
